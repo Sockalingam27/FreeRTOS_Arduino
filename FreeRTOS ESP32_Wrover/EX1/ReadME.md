@@ -1,5 +1,5 @@
 -------------------------------------------------------------------
-//Using only 1 core for learning purpose
+//Using only 1 core for learning purpose\n
 #if CONFIG_FREERTOS_UNICORE
 static const BaseType_t app_cpu = 0;
 #else
