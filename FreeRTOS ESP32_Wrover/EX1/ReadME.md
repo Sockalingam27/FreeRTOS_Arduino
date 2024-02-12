@@ -5,14 +5,6 @@ static const BaseType_t app_cpu = 0;
 #else
 static const BaseType_t app_cpu = 1;
 #endif
->>>>>>>>>>>>>>>>>>>>>>>>>>>>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>d
->>>>>>>>>>
->>>>ddd
->>>
->>
->
-
 -------------------------------------------------------------------
 This is written to make sure only one core of the ESP32 Wrover is used. Since learning FreeRTOS with 2 cores would be tuf ? i donno see
 
