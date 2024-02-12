@@ -32,19 +32,20 @@ And all of these tasks run separately.
 
 Here something called vTaskDelay is used which is a particular delay used for FreeRTOS and not the normal delay() fn.
 500 is the amt milliseconds we ewant to delay and the portTICK_PERIOD_MS is the tick timer present in the controller which makes sure the particular milliseconds is reached.
--------------------------------------------------------------------
- //Task to run forever
-  xTaskCreatePinnedToCore(                  // xTaskCreate is used for vanilla FreeRTOS
-                      toggleLED,            // Name of fn that is being called
-                      "Toggle the LED bruh",// Name of the task
-                      1024,                 // Stack size (for esp32 idf its in bytes for FreeRTOS its words
-                      NULL,                 // parameter that is passed to fn
-                      1,                    // Priority of task varies from 0 to 24, 24 being most priority
-                      NULL,                 // Task Handle
-                      app_cpu);             //Informing it to run on 1 core
 
-  // In vanilla RTOS, vTaskStartSchedueler() must be called in main
-  // once the tasks are done   
+-------------------------------------------------------------------
+           //Task to run forever
+            xTaskCreatePinnedToCore(                  // xTaskCreate is used for vanilla FreeRTOS
+                                toggleLED,            // Name of fn that is being called
+                                "Toggle the LED bruh",// Name of the task
+                                1024,                 // Stack size (for esp32 idf its in bytes for FreeRTOS its words
+                                NULL,                 // parameter that is passed to fn
+                                1,                    // Priority of task varies from 0 to 24, 24 being most priority
+                                NULL,                 // Task Handle
+                                app_cpu);             //Informing it to run on 1 core
+          
+            // In vanilla RTOS, vTaskStartSchedueler() must be called in main
+            // once the tasks are done   
 -------------------------------------------------------------------
 Now we know what task fn we have but we have to make sure this particular task is activated say made sure it runs.
 
