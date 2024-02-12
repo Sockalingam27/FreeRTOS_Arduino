@@ -32,8 +32,6 @@ And all of these tasks run separately.
 
 Here something called vTaskDelay is used which is a particular delay used for FreeRTOS and not the normal delay() fn.
 500 is the amt milliseconds we ewant to delay and the portTICK_PERIOD_MS is the tick timer present in the controller which makes sure the particular milliseconds is reached.
-
-
 -------------------------------------------------------------------
  //Task to run forever
   xTaskCreatePinnedToCore(                  // xTaskCreate is used for vanilla FreeRTOS
